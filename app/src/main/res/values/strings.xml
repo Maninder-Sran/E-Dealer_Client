@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">E-Dealer</string>
+    <string name="extended_fab_content_desc_player">Player</string>
+    <string name="extended_fab_label_player">Player</string>
+    <string name="extended_fab_content_desc_control">Shuffle Deck</string>
+    <string name="extended_fab_label_control">Shuffle Deck</string>
+</resources>

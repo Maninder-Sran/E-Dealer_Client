@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".control.ControlFragment"
+    android:layout_above="@id/bottom_nav">
+
+    <Switch
+        android:id="@+id/switch_manual_control"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Manual Control"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+        android:layout_above="@+id/compose_view_control_list"
+        />
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/shuffle_deck_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bottom_nav"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="16dp"
+        android:contentDescription="@string/extended_fab_content_desc_control"
+        android:text="@string/extended_fab_label_control"
+        app:icon="@drawable/ic_baseline_shuffle_24"
+        android:visibility="invisible"/>
+
+    <androidx.compose.ui.platform.ComposeView
+        android:id="@+id/compose_view_control_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
