@@ -9,12 +9,13 @@
         <entry key="..\:/Users/Manin/AndroidStudioProjects/EDealer_Client/app/src/main/res/drawable-v24/ic_minus.xml" value="0.1" />
         <entry key="..\:/Users/Manin/AndroidStudioProjects/EDealer_Client/app/src/main/res/drawable-v24/score.xml" value="0.1" />
         <entry key="..\:/Users/Manin/AndroidStudioProjects/EDealer_Client/app/src/main/res/layout/activity_main.xml" value="0.2672239108409321" />
-        <entry key="..\:/Users/Manin/AndroidStudioProjects/EDealer_Client/app/src/main/res/layout/fragment_control.xml" value="0.33" />
+        <entry key="..\:/Users/Manin/AndroidStudioProjects/EDealer_Client/app/src/main/res/layout/fragment_control.xml" value="0.5" />
         <entry key="..\:/Users/Manin/AndroidStudioProjects/EDealer_Client/app/src/main/res/layout/fragment_game.xml" value="0.14311043566362716" />
         <entry key="..\:/Users/Manin/AndroidStudioProjects/EDealer_Client/app/src/main/res/layout/fragment_players.xml" value="0.1574074074074074" />
         <entry key="..\:/Users/Manin/AndroidStudioProjects/EDealer_Client/app/src/main/res/layout/fragment_score.xml" value="0.14311043566362716" />
         <entry key="..\:/Users/Manin/AndroidStudioProjects/EDealer_Client/app/src/main/res/layout/players_page.xml" value="0.15121580547112462" />
         <entry key="..\:/Users/Manin/AndroidStudioProjects/EDealer_Client/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.29814814814814816" />
+        <entry key="..\:/Users/Manin/AndroidStudioProjects/EDealer_Client/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.199" />
       </map>
     </option>
   </component>

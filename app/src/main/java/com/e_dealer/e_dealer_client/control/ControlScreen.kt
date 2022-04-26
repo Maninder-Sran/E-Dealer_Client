@@ -1,6 +1,8 @@
 package com.e_dealer.e_dealer_client.control
 
 import android.util.Log
+import android.widget.Switch
+import androidx.appcompat.widget.SwitchCompat
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.*
@@ -11,9 +13,10 @@ import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.unit.dp
+import androidx.fragment.app.FragmentActivity
 import com.e_dealer.e_dealer_client.score.Player
-import com.e_dealer.e_dealer_client.score.updateScore
 import com.e_dealer.e_dealer_client.R
+import com.google.android.material.switchmaterial.SwitchMaterial
 import com.google.firebase.database.FirebaseDatabase
 
 val shuffleDeck = mutableStateOf(false)
@@ -63,14 +66,17 @@ fun ControlScreen() {
                 Log.e("firebase", "Error getting data", it)
             }
         }
-
         ControlList(playerLs = playersState)
     }
 }
 
 @Composable
 fun ControlList(playerLs : List<Player>){
-    LazyColumn(Modifier.fillMaxHeight()) {
+    LazyColumn(
+        Modifier
+            .wrapContentHeight()
+            .padding(16.dp)
+    ) {
         if (playerLs.isNotEmpty()) {
             items(playerLs.size) { index ->
                 if (playerLs[index].name != "NULL" && playerLs[index].name != "") {

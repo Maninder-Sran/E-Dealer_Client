@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.compose.ui.platform.ViewCompositionStrategy
 import com.e_dealer.e_dealer_client.databinding.FragmentGameBinding
+import com.e_dealer.e_dealer_client.score.createPlayer
 import com.google.firebase.database.FirebaseDatabase
 
 class GameFragment : Fragment() {
@@ -47,7 +48,11 @@ class GameFragment : Fragment() {
             }
         }
 
-        return view
+        binding.addGameFab.setOnClickListener {
+            createGame.value = true
+        }
+
+            return view
     }
 
     override fun onDestroyView() {

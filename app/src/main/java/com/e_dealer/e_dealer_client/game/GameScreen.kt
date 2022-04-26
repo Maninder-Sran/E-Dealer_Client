@@ -12,6 +12,7 @@ import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.dp
 
+val createGame = mutableStateOf(false)
 val savedGameData = mutableStateOf(false)
 var gameLs = List<Game>(1) { Game("*", "*",0) };
 
@@ -27,6 +28,10 @@ fun GameScreen(){
         if (savedGameData.value){
             gameState = gameLs
             savedGameData.value = false
+        }
+
+        if (createGame.value){
+            createGame.value = false
         }
 
         GameList(gameState)
@@ -102,9 +107,10 @@ fun GameListItem(game: Game, selectedOption: Game, onOptionSelected: (Game) -> U
                 horizontalArrangement = Arrangement.End
             ) {
             RadioButton(
+                modifier = Modifier.padding(16.dp),
                 selected = (game == selectedOption),
                 onClick = null )
+            }
         }
-    }
     }
 }

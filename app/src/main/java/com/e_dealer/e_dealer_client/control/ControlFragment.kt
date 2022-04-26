@@ -15,6 +15,7 @@ class ControlFragment : Fragment() {
     private var _binding : FragmentControlBinding? = null
     // This property is only valid between onCreateView and onDestroyView.
     private val binding get() = _binding!!
+    private var switchState = false
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,18 +25,32 @@ class ControlFragment : Fragment() {
         val view = binding.root
 
         binding.switchManualControl.setOnClickListener{
-            retrievePlayerData()
 
-            binding.composeViewControlList.apply {
-                setViewCompositionStrategy(ViewCompositionStrategy.DisposeOnViewTreeLifecycleDestroyed)
-                setContent {
-                    ControlScreen()
+            // If switch was off previously now enable the list
+            if (!switchState){
+
+                switchState = true
+                retrievePlayerData()
+
+                binding.composeViewControlList.apply {
+                    setViewCompositionStrategy(ViewCompositionStrategy.DisposeOnViewTreeLifecycleDestroyed)
+                    setContent {
+                        ControlScreen()
+                    }
+                }
+
+                binding.shuffleDeckFab.show()
+                binding.shuffleDeckFab.setOnClickListener {
+                    shuffleDeck.value = true
                 }
             }
-
-            binding.shuffleDeckFab.show()
-            binding.shuffleDeckFab.setOnClickListener {
-                shuffleDeck.value = true
+            else{
+                switchState = false
+                binding.shuffleDeckFab.hide()
+                binding.composeViewControlList.apply{
+                    setViewCompositionStrategy(ViewCompositionStrategy.DisposeOnViewTreeLifecycleDestroyed)
+                    setContent {}
+                }
             }
         }
 
